@@ -7,10 +7,6 @@ class Jogadorfutebol {
     this.altura = altura;
     this.peso = peso;
   }
-
-  mostrarAtributos() {
-    return "Nome: " + this.nome + "\n" + "Posição: " + this.posicao + "\n" + "Data de Nascimento: " + this.data_de_nascimento + "\n" + "Nacionalidade: " + this.nacionalidade + "\n" + "Altura: " + this.altura + "\n" + "Peso: " + this.peso;
-  }
   
   calcularIdade() {
     let data = new Date();
@@ -21,40 +17,48 @@ class Jogadorfutebol {
   }
 
   tempoAposentar() {
+    
+    var idade = this.calcularIdade();
+    
      if (this.posicao == "defesa") {
-     if (this.calcularIdade() > 40) { 
-     let tempo = 40 - this.calcularIdade();
-        console.log("Pode se aposentar dentro de " + tempo + " anos!");
+     if (idade > 40) { 
+     let tempo = 40 - idade;
+     return("Pode se aposentar dentro de " + tempo + " anos!\n");
       } else {
-      console.log("Pode se aposentar!");
+     return("Pode se aposentar!\n");
       }
 
     } else if (this.posicao == "meio-campo") {
 
-      if (this.calcularIdade() > 38) {
-      console.log("Pode se aposentar!");  
+      if (idade > 38) {
+      return("Pode se aposentar!\n");  
       } else {
-      let tempo = 38 - this.calcularIdade();
-        console.log("Pode se aposentar dentro de " + tempo + " anos!");
+      let tempo = 38 - idade;
+      return("Pode se aposentar dentro de " + tempo + " anos!\n");
       }
 
     } else if (this.posicao == "atacante") {
 
-      if (this.calcularIdade() > 35) {
-        let tempo = 35 - this.calcularIdade();
-        console.log("Pode se aposentar dentro de " + tempo + " anos!");
+      if (idade > 35) {
+      let tempo = 35 - idade;
+      return("Pode se aposentar dentro de " + tempo + " anos!\n");
       } else {
-        console.log("Pode se aposentar!");
+       return("Pode se aposentar!\n");
       }
 
     } else {
-      console.log("Posição não está cadastrado para a aposentadoria !")
+      return("Posição não está cadastrado para a aposentadoria !")
     }
    }
+  
+  mostrarAtributos() {
+    return "Nome: " + this.nome + "\n" + "Posição: " + this.posicao + "\n" + "Data de Nascimento: " + this.data_de_nascimento + "\n" + "Nacionalidade: " + this.nacionalidade + "\n" + "Altura: " + this.altura + "\n" + "Peso: " + this.peso + "\n";
+   }  
+  
   }
 
-let jogador1 = new Jogadorfutebol("Lionel Messi", "atacante", "24/06/1987", "Argentino", "1,69m", "67 kg");
-console.log(jogador1.mostrarAtributos() + '\n' + jogador1.tempoAposentar() + '\n');
+let jogadoru = new Jogadorfutebol("Lionel Messi", "atacante", "24/06/1987", "Argentino", "1,69m", "67 kg");
+console.log(jogadoru.mostrarAtributos() + jogadoru.tempoAposentar());
 
-let jogador2 = new Jogadorfutebol("Eduardo Pereira Rodrigues", "meio-campo", "07/01/1992", "Brasileiro", "1,66m", "63 kg");
-console.log(jogador2.mostrarAtributos() + '\n' + jogador2.tempoAposentar());
+let jogadord = new Jogadorfutebol("Eduardo Pereira Rodrigues", "meio-campo", "07/01/1992", "Brasileiro", "1,66m", "63 kg");
+console.log(jogadord.mostrarAtributos() + jogadord.tempoAposentar());

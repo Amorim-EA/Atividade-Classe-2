@@ -47,7 +47,7 @@ class Jogadorfutebol {
       }
 
     } else {
-      return("Posição não está cadastrado para a aposentadoria !")
+      return("Posição não está cadastrado para a aposentadoria!\n")
     }
    }
   

@@ -7,7 +7,11 @@ class Jogadorfutebol {
     this.altura = altura;
     this.peso = peso;
   }
-  
+
+  mostrarAtributos() {
+    return "Nome: " + this.nome + "\n" + "Posição: " + this.posicao + "\n" + "Data de Nascimento: " + this.data_de_nascimento + "\n" + "Nacionalidade: " + this.nacionalidade + "\n" + "Altura: " + this.altura + "\n" + "Peso: " + this.peso + "\n";
+}
+    
   calcularIdade() {
     let data = new Date();
     let ano_atual = data.getFullYear();
@@ -23,36 +27,35 @@ class Jogadorfutebol {
      if (this.posicao == "defesa") {
      if (idade > 40) { 
      let tempo = 40 - idade;
-     return("Pode se aposentar dentro de " + tempo + " anos!\n");
+     return "Pode se aposentar dentro de " + tempo + " anos!\n";
       } else {
-     return("Pode se aposentar!\n");
+     return "Pode se aposentar!\n";
       }
 
     } else if (this.posicao == "meio-campo") {
 
       if (idade > 38) {
-      return("Pode se aposentar!\n");  
+      return "Pode se aposentar!\n";  
       } else {
       let tempo = 38 - idade;
-      return("Pode se aposentar dentro de " + tempo + " anos!\n");
+      return "Pode se aposentar dentro de " + tempo + " anos!\n";
       }
 
     } else if (this.posicao == "atacante") {
 
       if (idade > 35) {
       let tempo = 35 - idade;
-      return("Pode se aposentar dentro de " + tempo + " anos!\n");
+      return "Pode se aposentar dentro de " + tempo + " anos!\n";
       } else {
-       return("Pode se aposentar!\n");
+       return "Pode se aposentar!\n";
       }
 
     } else {
-      return("Posição não está cadastrado para a aposentadoria!\n")
+      return "Posição não está cadastrado para a aposentadoria!\n"
     }
    }
   
-  mostrarAtributos() {
-    return "Nome: " + this.nome + "\n" + "Posição: " + this.posicao + "\n" + "Data de Nascimento: " + this.data_de_nascimento + "\n" + "Nacionalidade: " + this.nacionalidade + "\n" + "Altura: " + this.altura + "\n" + "Peso: " + this.peso + "\n";
+  
    }  
   
   }
